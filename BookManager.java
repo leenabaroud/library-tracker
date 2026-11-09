@@ -2,6 +2,10 @@ import java.util.List;
 
 public class BookManager {
     public static void addBook(String title) throws Exception {
+        if (title == null || title.isBlank()) {
+            System.out.println("Title cannot be empty.");
+            return;
+        }
         List<String> books = Storage.load();
         books.add(title);
         Storage.save(books);
