@@ -13,13 +13,16 @@ public class BookSearch {
         }
 
 
+
     public static void remove(String title) throws Exception {
         List<String> books = Storage.load();
-        books.remove(title);
-        Storage.save(books);
-        System.out.println("Removed: " + title);
+        if (books.remove(title)) {
+            Storage.save(books);
+            System.out.println("Removed: " + title);
+        } else {
+            System.out.println("Book not found: " + title);
+        }
     }
-
 
 
 
