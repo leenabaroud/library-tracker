@@ -13,5 +13,14 @@ public class BookSearch {
         }
 
 
+    public static void remove(String title) throws Exception {
+        List<String> books = Storage.load();
+        books.remove(title);
+        Storage.save(books);
+        System.out.println("Removed: " + title);
+    }
+
+
+
 
 }
