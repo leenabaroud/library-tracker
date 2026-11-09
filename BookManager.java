@@ -14,8 +14,8 @@ public class BookManager {
             System.out.println("No books yet.");
             return;
         }
-        for (String b : books) {
-            System.out.println("- " + b);
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println((i + 1) + ". " + books.get(i));
         }
     }
 }
